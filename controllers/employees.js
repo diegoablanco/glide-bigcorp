@@ -1,5 +1,3 @@
-const axios = require('axios')
-const buildEmployee = require('../builders/employee')
 const provider = require('../providers/employee')
 
 function parseExpand(expand) {
