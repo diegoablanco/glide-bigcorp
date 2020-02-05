@@ -1,6 +1,5 @@
 require('axios-debug-log')
 const axios = require('axios')
-const memoize = require("memoizee")
 const endpoint = 'https://rfy56yfcwk.execute-api.us-west-1.amazonaws.com/bigcorp/employees'
 
 const qs = require('qs');
