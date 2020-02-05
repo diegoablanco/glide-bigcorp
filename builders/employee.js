@@ -1,9 +1,7 @@
-const employeeProvider = require('../providers/employees')
 const departmentProvider = require('../providers/departments')
 const officeProvider = require('../providers/offices')
 
 function build (employee, expands) {
-    const managerExpands = expands.filter(expand => expand.indexOf('manager') == 0)
     const departmentExpands = expands.filter(expand => expand.indexOf('department') == 0)
     const officeExpands = expands.filter(expand => expand.indexOf('office') == 0)
 
