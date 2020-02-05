@@ -1,4 +1,4 @@
-const provider = require('../providers/employee')
+const provider = require('../providers/employees')
 
 function parseExpand(expand) {
     return (!Array.isArray(expand) ? [expand] : expand).map(expandString => expandString.split('.'))
