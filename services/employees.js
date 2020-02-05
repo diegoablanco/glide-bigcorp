@@ -1,13 +1,15 @@
 const axios = require('axios')
 const memoize = require("memoizee")
 const endpoint = 'https://rfy56yfcwk.execute-api.us-west-1.amazonaws.com/bigcorp/employees'
-
-exports.getAll = async function (limit, offset) {
+//const endpoint = 'http://localhost:3004/employees'
+const qs = require('qs');
+exports.getAll = async function (limit, offset, ids) {
+    let params = ids ? { id: ids } : { limit, offset }
     const { data: employees } = await axios.get(endpoint, { 
-        params: {
-            limit,
-            start: offset
-        }
+        params,
+        paramsSerializer: function(params) {
+            return qs.stringify(params, {arrayFormat: 'repeat'})
+        },
     })
     return employees
 }
